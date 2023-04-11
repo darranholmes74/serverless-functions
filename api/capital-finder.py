@@ -19,15 +19,15 @@ class handler(BaseHTTPRequestHandler):
                 country = word_data["capital"][0]
                 countries.append(country)
             message = f"The capital of {dic['country']} is {', '.join(countries)}"
-        elif "country" in dic:
-            url = f"https://restcountries.com/v3.1/capital/{dic['country']}?fullText=true"
+        elif "capital" in dic:
+            url = f"https://restcountries.com/v3.1/capital/{dic['capital']}?fullText=true"
             r = requests.get(url)
             data = r.json()
             countries = []
             for word_data in data:
                 country = word_data["country"][0]
                 countries.append(country)
-            message = f"The{dic['country']} is the {', '.join(countries)}"
+            message = f"The{dic['capital']} is the {', '.join(countries)}"
         else:
             message = "Give me a country name please"
 
