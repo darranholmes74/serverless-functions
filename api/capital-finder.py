@@ -8,12 +8,12 @@ class handler(BaseHTTPRequestHandler):
         s = self.path
         url_components = parse.urlsplit(s)
         query_string_list = parse.parse_qsl(url_components.query)
-        dic = dict(query_string_list)
+        capital = dict(query_string_list)
 
-        if "country" in dic:
-            url = f"https://restcountries.com/v3.1/capital/{dic['country']}"
-            r = requests.get(url + dic["country"])
-            data = r.json()
+        if capital:
+            url = f"https://restcountries.com/v3.1/capital-finder/{capital}"
+            # r = requests.get(url + dic["country"])
+            data = url.json()
             countries = []
             for word_data in data:
                 country = word_data["name"][0]
