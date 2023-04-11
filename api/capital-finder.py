@@ -15,8 +15,10 @@ class handler(BaseHTTPRequestHandler):
             r = requests.get(url + dic["country"])
             data = r.json()
             countries = []
-            if countries:
-                message = {data}
+            for word_data in data:
+                country = word_data
+                countries.append[country]
+            message = str(countries)
 
         else:
             message = "Give me a country name please"
