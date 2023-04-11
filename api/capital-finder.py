@@ -10,13 +10,13 @@ class handler(BaseHTTPRequestHandler):
         query_string_list = parse.parse_qsl(url_components.query)
         dic = dict(query_string_list)
 
-        if "word" in dic:
+        if "country" in dic:
             url = "https://restcountries.com/v3.1/all"
-            r = requests.get(url + dic["word"])
+            r = requests.get(url + dic["country"])
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["name"][0]["common"][0]
+                country = word_data["name"][0]
                 countries.append[country]
             message = str(countries)
 
