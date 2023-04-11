@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["capital"][0]
+                country = word_data
                 countries.append(country)
             message = str(countries)
 
