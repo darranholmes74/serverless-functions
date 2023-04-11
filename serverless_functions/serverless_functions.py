@@ -12,11 +12,11 @@ class handler(BaseHTTPRequestHandler):
 
         if "word" in dic:
             url = "https://restcountries.com/v3.1/all"
-            r = requests.get(url + dict["word"])
+            r = requests.get(url + "?word=" + dic["word"])
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["name"][0]["common"][0]
+                country = word_data["name"]["common"]
                 countries.append[country]
             message = str(countries)
 
