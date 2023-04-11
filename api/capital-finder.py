@@ -11,7 +11,7 @@ class handler(BaseHTTPRequestHandler):
         dic = dict(query_string_list)
 
         if "country" in dic:
-            url = f"https://restcountries.com/v3.1//{dic['country']}"
+            url = f"https://restcountries.com/v3.1//{dic['country']}?fullText=true"
             r = requests.get(url)
             data = r.json()
             countries = []
