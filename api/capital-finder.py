@@ -12,7 +12,7 @@ class handler(BaseHTTPRequestHandler):
 
         if "country" in dic:
             url = "https://restcountries.com/v3.1/all"
-            r = requests.get(url + dic["country"])
+            r = requests.get(url + "/" + dic["country"])
             data = r.json()
             countries = []
             for word_data in data:
