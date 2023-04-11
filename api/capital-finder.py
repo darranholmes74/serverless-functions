@@ -18,7 +18,7 @@ class handler(BaseHTTPRequestHandler):
             for word_data in data:
                 country = word_data["capital"][0]
                 countries.append(country)
-            message = f"The capital of {dic['country']} is {country}"
+            message = f"The capital of {dic['country']} is {str(country)}"
 
         else:
             message = "Give me a country name please"
