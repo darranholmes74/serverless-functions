@@ -25,7 +25,7 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["country"][0]
+                country = word_data
                 countries.append(country)
             message = f"The{dic['capital']} is the {', '.join(countries)}"
         else:
