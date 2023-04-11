@@ -11,14 +11,14 @@ class handler(BaseHTTPRequestHandler):
         dic = dict(query_string_list)
 
         if "country" in dic:
-            url = f"https://restcountries.com/v3.1//{dic['country']}?fullText=true"
+            url = f"https://restcountries.com/v3.1/{dic['country']}?fullText=true"
             r = requests.get(url)
             data = r.json()
             countries = []
             for word_data in data:
                 country = word_data["capital"][0]
                 countries.append(country)
-            message = str(countries)
+            message = f"The capital of {dic['country']} is {', '.join(countries)}"
 
         else:
             message = "Give me a country name please"
