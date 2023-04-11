@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["name"]["common"]
+                country = word_data["capital"][0]
                 countries.append(country)
             message = f"The capital of {dic['country']} is {', '.join(countries)}"
         elif "capital" in dic:
@@ -25,7 +25,7 @@ class handler(BaseHTTPRequestHandler):
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data
+                country = word_data["name"]["common"]
                 countries.append(country)
             message = f"The{dic['capital']} is the {', '.join(countries)}"
         else:
