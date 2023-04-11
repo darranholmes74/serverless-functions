@@ -17,7 +17,7 @@ class handler(BaseHTTPRequestHandler):
             countries = []
             for word_data in data:
                 country = word_data["capital"][0]
-                countries.append[country]
+                countries.append(country)
             message = str(countries)
 
         else:
