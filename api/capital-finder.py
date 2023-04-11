@@ -38,3 +38,4 @@ class handler(BaseHTTPRequestHandler):
         self.wfile.write(message.encode())
 
         return
+
