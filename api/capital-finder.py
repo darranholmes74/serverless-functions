@@ -12,11 +12,11 @@ class handler(BaseHTTPRequestHandler):
 
         if "country" in dic:
             url = "https://restcountries.com/v3.1/all"
-            r = requests.get(url + "/" + dic["country"])
+            r = requests.get(url + dic["country"])
             data = r.json()
             countries = []
             for word_data in data:
-                country = word_data["name"]
+                country = word_data["name"][0]
                 countries.append[country]
             message = str(countries)
 
@@ -24,7 +24,7 @@ class handler(BaseHTTPRequestHandler):
             message = "Give me a country name please"
 
         self.send_response(200)
-        self.send_header('Content-type', 'text/plain')
+        self.send_header('content-type', 'text/plain')
         self.end_headers()
 
         self.wfile.write(message.encode())
