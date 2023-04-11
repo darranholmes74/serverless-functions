@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
             for word_data in data:
                 country = word_data["name"]["common"]
                 countries.append(country)
-            message = f"The{dic['capital']} is the {', '.join(countries)}"
+            message = f"{dic['capital']} is the capital of {', '.join(countries)}"
         else:
             message = "Give me a country name please"
 
